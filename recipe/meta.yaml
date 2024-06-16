@@ -1,5 +1,5 @@
 {% set name = "mpipartition" %}
-{% set version = "1.2.0" %}
+{% set version = "1.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mpipartition-{{ version }}.tar.gz
-  sha256: 05956cf58a5f09317a1a11446e1688b8e2c089d94a30747ed9b057f3de86f306
+  sha256: 58d46ff3b0c1ef4df275a3ace5901b80245b38cee8e41741ad3f434767f9525d
 
 build:
   noarch: python
