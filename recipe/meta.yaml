@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mpipartition-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/mpipartition-{{ version }}.tar.gz
   sha256: c6e5be3be9fbebbad3aa1e6ae091017c9b11b6f5ede4b409ea0e8414287f390c
 
 build:
@@ -18,11 +18,11 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - poetry-core >=1.0.0
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - mpi4py
     - numpy
     - numba
@@ -34,6 +34,7 @@ test:
     - mpirun -n 1 python -c "import mpipartition"
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/ArgonneCPAC/MPIPartition
