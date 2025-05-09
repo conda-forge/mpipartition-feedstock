@@ -1,5 +1,6 @@
 {% set name = "mpipartition" %}
-{% set version = "1.4.0" %}
+{% set version = "1.5.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/mpipartition-{{ version }}.tar.gz
-  sha256: c6e5be3be9fbebbad3aa1e6ae091017c9b11b6f5ede4b409ea0e8414287f390c
+  sha256: b5d8e1cfce04dc54e986dc04a8bed5319a69d2eeb26fabe1440089eabf29b0f8
 
 build:
   noarch: python
@@ -23,9 +24,9 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - mpi4py
-    - numpy
-    - numba
+    - mpi4py >=3.1.6
+    - numpy >1.2
+    - numba >=0.57.0
     - click
 
 test:
