@@ -23,9 +23,9 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - mpi4py
-    - numpy
-    - numba
+    - mpi4py >=3.1.6
+    - numpy >1.2
+    - numba >=0.57.0
     - click
 
 test:
